@@ -1,5 +1,6 @@
-package com.example.mynewapp.mynewapp;
+package com.example.mynewapp.mynewapp.rest;
 
+import com.example.mynewapp.mynewapp.commons.Professional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
