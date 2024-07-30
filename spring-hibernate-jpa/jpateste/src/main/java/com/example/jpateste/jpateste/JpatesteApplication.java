@@ -17,7 +17,7 @@ public class JpatesteApplication {
 
 	@Bean
 	    public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
-            return runner -> { createStudent(studentDAO)};
+            return runner -> { createMultipleStudent(studentDAO); };
 
 }
 
@@ -26,10 +26,16 @@ public class JpatesteApplication {
 
 
 
+private void createMultipleStudent(StudentDAO studentDAO){
 
+	Student tempStudent1 = new Student("Test1", "User", "1testuser@mail.com");
+	Student tempStudent2 = new Student("Test2", "User", "2testuser@mail.com");
+	Student tempStudent3 = new Student("Test3", "User", "3testuser@mail.com");
 
-
-
+	studentDAO.save(tempStudent1);
+    studentDAO.save(tempStudent2);
+	studentDAO.save(tempStudent3);
+}
 
 private void createStudent(StudentDAO studentDAO){
 		Student tempStudent = new Student("Test", "User", "testuser@mail.com");
